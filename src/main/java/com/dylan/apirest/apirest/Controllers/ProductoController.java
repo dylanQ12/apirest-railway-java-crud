@@ -53,7 +53,7 @@ public class ProductoController {
     @DeleteMapping("/{id}")
     public String deleteProducto(@PathVariable Long id) {
         Producto producto = productoRepositorie.findById(id)
-                 .orElseThrow(()-> new RuntimeException("No se encontró el producto con el ID: " + id));
+                .orElseThrow(() -> new RuntimeException("No se encontró el producto con el ID: " + id));
 
         productoRepositorie.delete(producto);
         return "El producto con el ID: " + id + " fue eliminado correctamente";
